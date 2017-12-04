@@ -20,7 +20,22 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.ConfigurableApplicationContext;
 
-
+/**
+ * Starter class: Spring boot entry point.
+ * 
+ * It acts as an Eureka Server (@EnableEurekaServer) in standalone mode. It is based on Netflix implementation of Service Registry pattern.
+ *   Eureka clients can register with this server. Clients will receive periodically updates with changes on Eureka Server registries.
+ * It is able to register itself with an Eureka Server. Once it is register it receives from Eureka periodically 
+ *  updates about the microservice instances running. It requires specific configuration on application.yml: eureka.client properties. 
+ * 
+ * It also defines the init of the hierarchy of all classed being scanned by Spring (labeled as @SprinBootApplication)
+ * Features:
+ * Create pidfile on working dir when starting.
+ * if pidfile is present, application cannot start
+ * if pidfile is removed, application will be stopped
+ * 
+ * TODO: Below features should be moved to a parent project (with common dependencies included)
+ */
 @SpringBootApplication
 @EnableEurekaServer
 public class MainClass {

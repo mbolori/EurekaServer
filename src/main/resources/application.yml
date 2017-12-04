@@ -6,7 +6,7 @@ spring:
 
 info:
   app:
-    name: Eureka-server
+    name: EurekaServer
     description: Service registry powered by Netflix Eureka Server
     version: 1.0.0
     mode: default
